@@ -1,12 +1,19 @@
-<h1>Dashboard</h1>
-
-<%= link_to "Create New Demo Night", new_admin_demo_night_path %>
-<%= link_to "Current Projects", admin_projects_path %>
+<p class="headline">Dashboard</p>
+<div class="row">
+  <div class="col s12 m4">
+    <%= link_to "Create New Demo Night", new_admin_demo_night_path, class: "btn waves-effect waves-light" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m4">
+    <%= link_to "Current Projects", admin_projects_path, class: "btn waves-effect waves-light" %>
+  </div>
+</div>
 
 <% if @demo_night == nil %>
   <p>No current demo night available.</p>
 <% elsif @demo_night.votes.length > 0 %>
-  <%= render partial: 'vote_talley', locals: {projects: @demo_night.projects} %>
+  <%= render partial: 'vote_talley', locals: { projects: @demo_night.projects } %>
 <% else %>
   <p>No votes yet.</p>
 <% end %>

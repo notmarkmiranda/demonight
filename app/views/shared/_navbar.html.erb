@@ -1,0 +1,39 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
+  <li><%= link_to "Create Demo Night", new_admin_demo_night_path %></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper blue-grey darken-4">
+    <div class="container">
+      <a href="/" class="brand-logo">Demo Night</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to "Dashboard", root_path %></li>
+        <% if current_admin %>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Administrative Links<i class="material-icons right">arrow_drop_down</i></a></li>
+        <% end %>
+        <% if current_user %>
+          <li><%= link_to "Log Out", "/logout" %></li>
+        <% end %>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><%= link_to "Dashboard", root_path %></li>
+        <% if current_admin %>
+          <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
+          <li><%= link_to "Create Demo Night", new_admin_demo_night_path %></li>
+        <% end %>
+        <% if current_user %>
+          <li><%= link_to "Log Out", "/logout" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+$(document).ready(function() {
+   $(".button-collapse").sideNav();
+})
+</script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Demonight</title>
+    <title>Demo Night!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%= render partial: "shared/navbar" %>
     <% flash.each do |key, value| %>
       <script>
       var $toastConcent = $('<div class="<%= key %>"><%= value %></div>');

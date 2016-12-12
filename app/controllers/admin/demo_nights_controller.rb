@@ -1,5 +1,9 @@
 class Admin::DemoNightsController < Admin::BaseController
 
+  def index
+    @demo_nights = DemoNight.all
+  end
+
   def new
     @demo_night = DemoNight.new
   end
@@ -14,6 +18,13 @@ class Admin::DemoNightsController < Admin::BaseController
       redirect_to admin_demo_night_path(dn)
     else
       render :new
+    end
+  end
+
+  def update
+    require "pry"; binding.pry
+    if params[:type] == "activate"
+
     end
   end
 

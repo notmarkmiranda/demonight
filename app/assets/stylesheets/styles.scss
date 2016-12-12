@@ -1,10 +1,29 @@
-// application.html.erb start
-.main-container {
-  padding-top: 100px;
+// general styling START
+body {
+  font-family: 'Raleway', sans-serif;
 }
-// application.html.erb end
+// general styling END
 
-// sessions/new.html.erb start
+// application.html.erb START
+.main-container {
+  padding-top: 50px;
+}
+@media screen and (max-width: 1024px) {
+    .main-container {
+        padding-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+// application.html.erb END
+
+// navbar START
+.brand-logo {
+  text-transform: uppercase;
+}
+// navbar END
+
+// sessions/new.html.erb START
 .login {
   background-color: #EEE;
 
@@ -12,4 +31,21 @@
     margin-bottom: 50px;
   }
 }
-// sessions/new.html.erb end
+// sessions/new.html.erb END
+
+// regular dashboard START
+p.headline {
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+  }
+  text-align: center;
+  color: #05C2D1;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.col.s12 > .btn {
+  width: 100%;
+}
+// regular dashboard END

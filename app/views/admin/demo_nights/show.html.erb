@@ -6,8 +6,9 @@
       <%= project.name %>
     <% end %>
   <% end %>
+
 </div>
 
 <div class="admin-tools">
-  <%= link_to "Activate Demo Night!" ,"#" %>
+  <%= link_to "Activate Demo Night" , admin_demo_night_path(@demo_night, {type: "activate"}) %>
 </div>
